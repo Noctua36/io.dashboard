@@ -4,7 +4,8 @@
   const express = require('express')
   const path = require('path')
   const app = express()
-
+  const server = require('http').createServer(app)
+  
   const HTTP_PORT = process.env.PORT || 3000
 
   app.set('view engine', 'pug')
@@ -15,17 +16,16 @@
   // root route
   app.get('/', function (req, res) {
     res.render('index', {
-      title: 'Hey',
-      message: 'Hello there!'
+      title: 'Dashboard.io'
     })
   })
 
   // start server
-  const server = app.listen(HTTP_PORT, () => {
+  server.listen(HTTP_PORT, () => {
     console.log('Webserver running on port ' + HTTP_PORT)
   })
 
-  const io = require('socket.io')(server);
+  const io = require('socket.io').listen(server)
   const socketEvents = require('./socketEvents')
 
   io.on('connection', socketEvents.onConnect)
