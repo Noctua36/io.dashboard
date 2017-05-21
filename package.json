@@ -1,0 +1,30 @@
+{
+  "name": "dashboard.io",
+  "version": "0.1.0",
+  "description": "Simple dashboard for communicating over serial port to micro-controller boards such as Arduino, Raspberry Pi, Node-mcu and so...",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Raspberry",
+    "Arduino",
+    "Node-mcu",
+    "Node.js",
+    "sockets.io"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Noctua36/io.dashboard"
+  },
+  "author": "Gustavo O. Mendonça",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3",
+    "pug": "^2.0.0-rc.1",
+    "socket.io": "^2.0.1"
+  },
+  "devDependencies": {
+    "bower": "^1.8.0"
+  }
+}

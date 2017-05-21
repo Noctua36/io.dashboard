@@ -1,0 +1,14 @@
+doctype html
+html
+  include head
+  body
+    h1= message
+script.
+  $(document).ready(() => {
+    const onData = (err, data) => {
+      console.log('Retorno:',data)
+    }
+   
+    socket.emit('meMandaAlgoPraIniciarAi')
+    socket.on('meMandaAlgoPraIniciarAi_ret', onData)
+  });
